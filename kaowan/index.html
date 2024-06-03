@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria de Carreira Personalizada</title>
+    <link rel="stylesheet"  href="style.css">
+
+</head>
+<body>
+    <h1>Mentoria de Carreira Personalizada</h1>
+    
+    <form id="mentoriaForm">
+        <label for="desempenhoAcademico">Desempenho Acadêmico:</label>
+        <input type="number" id="desempenhoAcademico" name="desempenhoAcademico" step="0.01" min="0" max="10"><br><br>
+
+        <label for="preferencias">Preferências:</label><br>
+        <textarea id="preferencias" name="preferencias" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">Obter Orientação</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById("mentoriaForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o comportamento padrão de enviar o formulário
+
+            // Obter os valores dos campos
+            var desempenhoAcademico = parseFloat(document.getElementById("desempenhoAcademico").value);
+            var preferencias = document.getElementById("preferencias").value;
+
+            // Aqui você colocaria a lógica da IA para oferecer orientação personalizada
+
+            // Por enquanto, vamos apenas exibir uma mensagem de exemplo
+            var resultadoHTML = "<h2>Orientação Personalizada:</h2>";
+            resultadoHTML += "<p>Com base no seu desempenho acadêmico (" + desempenhoAcademico.toFixed(2) + ") e suas preferências, recomendamos que você explore as áreas de TI e Engenharia de Software para suas futuras carreiras.</p>";
+
+            document.getElementById("resultado").innerHTML = resultadoHTML;
+        });
+    </script>
+</body>
+</html>
